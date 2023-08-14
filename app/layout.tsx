@@ -19,6 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      {/* @ts-ignore */}
       <title>{metadata?.title}</title>
       <body className={inter.className}>
         <RecoilRoot>{children}</RecoilRoot>
