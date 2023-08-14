@@ -1,7 +1,33 @@
+"use client";
+
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { faRightLong } from "@fortawesome/free-solid-svg-icons/faRightLong";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useRecoilState } from "recoil";
+import { SelectState } from "./atoms/atoms";
+import { useRouter } from "next/navigation";
+
 interface Options_Props {}
 
 const Options_ = ({}: Options_Props) => {
-    const data_ = ['']
+  const data_ = [
+    {
+      image: "/assets/images/landing.png",
+      client: "Ivory Tower Group • 13 Hours Ago",
+      title: "Construction client design.. Paralax Hero!",
+      type: "Landing Page",
+      video: "/assets/videos/macbookDarkCookie.mp4",
+    },
+    {
+      image: "/assets/images/auth.png",
+      client: "Ivory Tower Group • 13 Hours Ago",
+      title: "Construction client design.. Paralax Hero!",
+      type: "Landing Page",
+      video: "/assets/videos/macbookCameraCoffee.mp4",
+    },
+  ];
+
+  const [select, setSelect] = useRecoilState(SelectState);
   return (
     <div
       className={`w-full min-h-[400px] flex flex-col justify-start items-center px-4 mt-8`}
@@ -9,53 +35,147 @@ const Options_ = ({}: Options_Props) => {
       <div
         className={`w-full h-[50px] flex flex-row justify-between items-center rounded-[4px] m-1 mb-4`}
       >
+        <div className={`min-w-[150px] h-[40px] rounded-[4px] m-1`}>
+          <p className={`text-[18px] font-black text-black/50`}>
+            Latest Projects
+          </p>
+        </div>
         <div
-          className={`w-[150px] h-[40px] bg-black/30 rounded-[4px] m-1`}
-        ></div>
-        <div
-          className={`w-[150px] h-[40px] bg-black/30 rounded-[4px] m-1`}
-        ></div>
+          className={`min-w-[50px] min-h-[10px] rounded-[4px] m-1 flex flex-row justify-center items-center cursor-pointer text-pink-600 hover:text-black/50`}
+        >
+          <p className={`text-[13px]`}>Get featured</p>
+          <FontAwesomeIcon
+            icon={faRightLong}
+            className={`h-[15px] w-[15px] ml-2`}
+            onClick={() => {}}
+          />
+        </div>
       </div>
-      {
-        data_.map((obj, index) => (
-          <OptionItem_ key={index} />
-        ))
-      }
+      <div
+        className={`w-full min-h-0 flex flex-row justify-start items-center rounded-[4px] mb-8`}
+      >
+        {data_.map((obj, index) => (
+          <OptionItem_ obj_={obj} key={index} />
+        ))}
+      </div>
+      <div
+        className={`w-full h-[50px] flex flex-row justify-between items-center rounded-[4px] m-1`}
+      >
+        <div className={`min-w-[150px] h-[40px] rounded-[4px] m-1`}>
+          <p className={`text-[18px] font-black text-black/50`}>
+            Case Study
+          </p>
+        </div>
+        {/* <div
+          className={`min-w-[50px] min-h-[10px] rounded-[4px] m-1 flex flex-row justify-center items-center cursor-pointer text-pink-600 hover:text-black/50`}
+        >
+          <p className={`text-[13px]`}>Get featured</p>
+          <FontAwesomeIcon
+            icon={faRightLong}
+            className={`h-[15px] w-[15px] ml-2`}
+            onClick={() => {}}
+          />
+        </div> */}
+      </div>
+      <div
+        className={`w-full min-h-[300px] flex flex-row justify-start items-center m-2 mb-4`}
+      >
+        <div
+          className={`w-full min-h-[400px] flex flex-row justify-start items-center rounded-[4px] m-1 relative overflow-hidden`}
+        >
+          <img className={`w-full h-full object-cover`} src={select.image} />
+        </div>
+      </div>
     </div>
   );
 };
 
 export default Options_;
 
-
 interface OptionItem_Props {
-    
+  obj_: object;
 }
- 
-const OptionItem_ = ({}:OptionItem_Props) => {
-    return ( 
-        <div
-        className={`w-full min-h-0 flex flex-row justify-start items-center rounded-[4px] mb-8`}
+
+const OptionItem_ = ({ obj_ }: OptionItem_Props) => {
+  const [select_, setSelect_] = useRecoilState(SelectState);
+  const router = useRouter();
+  const handleNav_ = () => {
+    router.push("/");
+  };
+
+  return (
+    <div
+      className={`min-w-[250px] min-h-[200px] justify-center items-start flex flex-col ${
+        obj_ == select_
+          ? "opacity-100 hover:opacity-80"
+          : "opacity-80 hover:opacity-50"
+      } transition-all mr-6 duration-200 rounded-[4px]`}
+    >
+      <div
+        className={`w-[350px] h-[200px] bg-black/30 rounded-[4px] m-1 relative overflow-hidden cursor-pointer`}
+        onClick={() => {
+          setSelect_(obj_);
+          console.log(select_);
+          // handleNav_()
+        }}
       >
-        <div
-          className={`w-[250px] min-h-[200px] justify-center items-start flex flex-col`}
-        >
-          <div
-            className={`w-[250px] h-[200px] bg-black/30 rounded-[4px] m-1`}
-          ></div>
-          <div
-            className={`w-[150px] h-[30px] flex flex-row justify-center items-center rounded-[4px] bg-black/30 m-1`}
-          ></div>
-          <div
-            className={`w-[250px] h-[60px] flex flex-row justify-center items-center rounded-[4px] bg-black/30 m-1`}
-          ></div>
-          <div
-            className={`w-[250px] h-[60px] flex flex-row justify-center items-center rounded-[4px] bg-black/30 m-1`}
-          ></div>
-          <div
-            className={`w-[150px] h-[30px] flex flex-row justify-center items-center rounded-[4px] bg-black/30 m-1 mt-3`}
-          ></div>
-        </div>
+        <img
+          src={
+            // @ts-ignore
+            obj_.image
+          }
+          className={`w-full h-full object-cover scale-125`}
+          alt="placeholder"
+        />
       </div>
-     );
-}
+      <div
+        className={`min-w-[150px] h-[20px] flex flex-row justify-start items-center rounded-[4px] m-1`}
+      >
+        <div className={`w-5 h-5 rounded-[50%] bg-black/30 mr-1`}></div>
+        <p className={`text-[12px] text-black/50 tracking-[-0.5px]`}>
+          {
+            // @ts-ignore
+            obj_.client
+          }
+        </p>
+      </div>
+      <div
+        className={`w-[250px] min-h-0 flex flex-row justify-start items-start rounded-[4px] m-1`}
+      >
+        <p
+          className={`text-[18px] hover:underline transition-all duration-200 cursor-pointer font-black text-black/80 Dressing_ text-pink-800`}
+        >
+          {
+            // @ts-ignore
+            obj_.title
+          }
+        </p>
+      </div>
+      <div
+        className={`w-[350px] h-[60px] flex flex-row justify-center items-center rounded-[4px] m-1`}
+      >
+        <p className={`text-[12px] text-black/50 tracking-[-0.2px]`}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
+          risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec,
+          ultricies sed, dolor. Cras elementum ultrices diam.
+        </p>
+      </div>
+      <div
+        className={`min-w-[150px] h-[30px] flex flex-row justify-start items-center rounded-[4px] m-1 mt-3`}
+      >
+        <FontAwesomeIcon
+          icon={faCartShopping}
+          className={`text-[13px] mr-2 cursor-pointer`}
+        />
+        <p
+          className={`text-[12px] text-black/50 hover:underline cursor-pointer tracking-[-0.5px] text-pink-600`}
+        >
+          {
+            // @ts-ignore
+            obj_.type
+          }
+        </p>
+      </div>
+    </div>
+  );
+};
