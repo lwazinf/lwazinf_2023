@@ -33,7 +33,7 @@ const Options_ = ({}: Options_Props) => {
       className={`w-full min-h-[400px] flex flex-col justify-start items-center px-4 mt-8`}
     >
       <div
-        className={`w-full h-[50px] flex flex-row justify-between items-center rounded-[4px] m-1 mb-4`}
+        className={`w-full h-[50px] flex flex-row justify-between items-center rounded-[4px] m-1`}
       >
         <div className={`min-w-[150px] h-[40px] rounded-[4px] m-1`}>
           <p className={`text-[18px] font-black text-black/50`}>
@@ -83,7 +83,10 @@ const Options_ = ({}: Options_Props) => {
         <div
           className={`w-full min-h-[400px] flex flex-row justify-start items-center rounded-[4px] m-1 relative overflow-hidden`}
         >
-          <img className={`w-full h-full object-cover`} src={select.image} />
+          <img className={`w-full h-full object-cover`} src={
+          // @ts-ignore
+          select.image
+          } />
         </div>
       </div>
     </div>
@@ -114,6 +117,7 @@ const OptionItem_ = ({ obj_ }: OptionItem_Props) => {
       <div
         className={`w-[350px] h-[200px] bg-black/30 rounded-[4px] m-1 relative overflow-hidden cursor-pointer`}
         onClick={() => {
+          // @ts-ignore
           setSelect_(obj_);
           console.log(select_);
           // handleNav_()

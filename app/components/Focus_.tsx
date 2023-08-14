@@ -16,7 +16,9 @@ const Focus_ = ({}) => {
   useEffect(() => {
     const playerObj = document.getElementById("main-player");
     if (playerObj) {
+          // @ts-ignore
       if (playerObj.src !== select.video) {
+          // @ts-ignore
         playerObj.src = select.video;
       }
     }
@@ -25,15 +27,20 @@ const Focus_ = ({}) => {
   const videoPlayPauseStop = (operation = true) => {
     const playerObj = document.getElementById("main-player");
     if (operation) {
+          // @ts-ignore
       if (playerObj?.paused) {
+          // @ts-ignore
         playerObj?.play();
         setPlaying_(true);
       } else {
+          // @ts-ignore
         playerObj?.pause();
         setPlaying_(false);
       }
     } else {
+          // @ts-ignore
       playerObj?.pause();
+          // @ts-ignore
       playerObj.currentTime = 0;
       setPlaying_(false);
     }
