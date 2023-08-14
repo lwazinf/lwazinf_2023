@@ -58,7 +58,7 @@ const Focus_ = ({}) => {
           className={`w-[800px] h-full flex flex-row justify-center items-center rounded-[4px] bg-black/30 m-1 relative overflow-hidden`}
         >
           <div className={`h-full object-cover`}>
-            <video autoPlay={false} id={`main-player`}>
+            <video autoPlay id={`main-player`}>
               <source
                 src={"/assets/videos/macbookCameraCoffee.mp4"}
                 type="video/mp4"
