@@ -16,14 +16,14 @@ const Options_ = ({}: Options_Props) => {
       client: "Ivory Tower Group • 13 Hours Ago",
       title: "Construction client design.. Paralax Hero!",
       type: "Landing Page",
-      video: "/assets/videos/macbookDarkCookie.mp4",
+      video: "https://firebasestorage.googleapis.com/v0/b/wimining-ce758.appspot.com/o/macbookCameraCoffee.mp4?alt=media&token=d57b4f9d-87e5-4da2-bbb1-f85d8e47da9d",
     },
     {
       image: "/assets/images/auth.png",
       client: "Ivory Tower Group • 13 Hours Ago",
       title: "Construction client design.. Paralax Hero!",
       type: "Landing Page",
-      video: "/assets/videos/macbookCameraCoffee.mp4",
+      video: "https://firebasestorage.googleapis.com/v0/b/wimining-ce758.appspot.com/o/macbookDarkCookie.mp4?alt=media&token=02568faa-8412-427a-8d11-21adad4ddb82",
     },
   ];
 
