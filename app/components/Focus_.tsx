@@ -52,7 +52,7 @@ const Focus_ = ({}) => {
     >
       
       <div
-        className={`w-full h-[400px] flex flex-row justify-start items-center`}
+        className={`w-full h-[450px] flex flex-row justify-start items-center`}
       >
         <div
           className={`w-[800px] h-full flex flex-row justify-center items-center rounded-[4px] bg-black/30 m-1 relative overflow-hidden`}

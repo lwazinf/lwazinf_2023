@@ -4,29 +4,14 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faRightLong } from "@fortawesome/free-solid-svg-icons/faRightLong";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRecoilState } from "recoil";
-import { SelectState } from "./atoms/atoms";
+import { SelectState, SelectedState } from "./atoms/atoms";
 import { useRouter } from "next/navigation";
+import { data_ } from "../utils/utils";
+import Link from "next/link";
 
 interface Options_Props {}
 
 const Options_ = ({}: Options_Props) => {
-  const data_ = [
-    {
-      image: "/assets/images/landing.png",
-      client: "Ivory Tower Group • 13 Hours Ago",
-      title: "Construction client design.. Paralax Hero!",
-      type: "Landing Page",
-      video: "https://firebasestorage.googleapis.com/v0/b/wimining-ce758.appspot.com/o/macbookCameraCoffee.mp4?alt=media&token=d57b4f9d-87e5-4da2-bbb1-f85d8e47da9d",
-    },
-    {
-      image: "/assets/images/auth.png",
-      client: "Ivory Tower Group • 13 Hours Ago",
-      title: "Construction client design.. Paralax Hero!",
-      type: "Landing Page",
-      video: "https://firebasestorage.googleapis.com/v0/b/wimining-ce758.appspot.com/o/macbookDarkCookie.mp4?alt=media&token=02568faa-8412-427a-8d11-21adad4ddb82",
-    },
-  ];
-
   const [select, setSelect] = useRecoilState(SelectState);
   return (
     <div
@@ -55,16 +40,14 @@ const Options_ = ({}: Options_Props) => {
         className={`w-full min-h-0 flex flex-row justify-start items-center rounded-[4px] mb-8`}
       >
         {data_.map((obj, index) => (
-          <OptionItem_ obj_={obj} key={index} />
+          <OptionItem_ obj_={obj} idx_={`${index}`} key={index} />
         ))}
       </div>
       <div
         className={`w-full h-[50px] flex flex-row justify-between items-center rounded-[4px] m-1`}
       >
         <div className={`min-w-[150px] h-[40px] rounded-[4px] m-1`}>
-          <p className={`text-[18px] font-black text-black/50`}>
-            Case Study
-          </p>
+          <p className={`text-[18px] font-black text-black/50`}>Case Study</p>
         </div>
         {/* <div
           className={`min-w-[50px] min-h-[10px] rounded-[4px] m-1 flex flex-row justify-center items-center cursor-pointer text-pink-600 hover:text-black/50`}
@@ -83,10 +66,13 @@ const Options_ = ({}: Options_Props) => {
         <div
           className={`w-full min-h-[400px] flex flex-row justify-start items-center rounded-[4px] m-1 relative overflow-hidden`}
         >
-          <img className={`w-full h-full object-cover`} src={
-          // @ts-ignore
-          select.image
-          } />
+          <img
+            className={`w-full h-full object-cover`}
+            src={
+              // @ts-ignore
+              select.image
+            }
+          />
         </div>
       </div>
     </div>
@@ -97,9 +83,11 @@ export default Options_;
 
 interface OptionItem_Props {
   obj_: object;
+  idx_: string;
 }
 
-const OptionItem_ = ({ obj_ }: OptionItem_Props) => {
+const OptionItem_ = ({ obj_, idx_ }: OptionItem_Props) => {
+  const [selected_, setSelected_] = useRecoilState(SelectedState);
   const [select_, setSelect_] = useRecoilState(SelectState);
   const router = useRouter();
   const handleNav_ = () => {
@@ -109,18 +97,20 @@ const OptionItem_ = ({ obj_ }: OptionItem_Props) => {
   return (
     <div
       className={`min-w-[250px] min-h-[200px] justify-center items-start flex flex-col ${
-        obj_ == select_
+        idx_ == selected_
           ? "opacity-100 hover:opacity-80"
-          : "opacity-80 hover:opacity-50"
+          : "opacity-50 hover:opacity-30"
       } transition-all mr-6 duration-200 rounded-[4px]`}
     >
       <div
         className={`w-[350px] h-[200px] bg-black/30 rounded-[4px] m-1 relative overflow-hidden cursor-pointer`}
         onClick={() => {
           // @ts-ignore
+          setSelected_(idx_);
+          // @ts-ignore
           setSelect_(obj_);
-          console.log(select_);
           // handleNav_()
+          console.log(idx_);
         }}
       >
         <img
@@ -145,15 +135,26 @@ const OptionItem_ = ({ obj_ }: OptionItem_Props) => {
       </div>
       <div
         className={`w-[250px] min-h-0 flex flex-row justify-start items-start rounded-[4px] m-1`}
+        onClick={() => {
+          // @ts-ignore
+          setSelected_(idx_);
+          // @ts-ignore
+          setSelect_(obj_);
+          // handleNav_()
+          console.log(idx_);
+        }}
       >
-        <p
-          className={`text-[18px] hover:underline transition-all duration-200 cursor-pointer font-black text-black/80 Dressing_ text-pink-800`}
-        >
-          {
-            // @ts-ignore
-            obj_.title
-          }
-        </p>
+          {/* @ts-ignore */}
+        <a href={obj_.link} target="_blank" rel="noopener noreferrer">
+          <p
+            className={`text-[18px] hover:underline transition-all duration-200 cursor-pointer font-black text-black/80 Dressing_ text-red-800`}
+          >
+            {
+              // @ts-ignore
+              obj_.title
+            }
+          </p>
+        </a>
       </div>
       <div
         className={`w-[350px] h-[60px] flex flex-row justify-center items-center rounded-[4px] m-1`}
