@@ -94,6 +94,7 @@ const OptionItem_ = ({ obj_, idx_ }: OptionItem_Props) => {
   const handleNav_ = () => {
     router.push("/");
   };
+        // @ts-ignore
   const handleClick = (idx_) => {
     if(idx_ !== selected_){
       setSelected_(''); // Set to empty string initially
