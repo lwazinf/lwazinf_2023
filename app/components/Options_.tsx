@@ -4,7 +4,7 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faRightLong } from "@fortawesome/free-solid-svg-icons/faRightLong";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRecoilState } from "recoil";
-import { SelectState, SelectedState } from "./atoms/atoms";
+import { PlayState, SelectState, SelectedState } from "./atoms/atoms";
 import { useRouter } from "next/navigation";
 import { data_ } from "../utils/utils";
 import Link from "next/link";
@@ -89,9 +89,21 @@ interface OptionItem_Props {
 const OptionItem_ = ({ obj_, idx_ }: OptionItem_Props) => {
   const [selected_, setSelected_] = useRecoilState(SelectedState);
   const [select_, setSelect_] = useRecoilState(SelectState);
+  const [playing_, setPlaying_] = useRecoilState(PlayState)
   const router = useRouter();
   const handleNav_ = () => {
     router.push("/");
+  };
+  const handleClick = (idx_) => {
+    if(idx_ !== selected_){
+      setSelected_(''); // Set to empty string initially
+
+    setTimeout(() => {
+      setSelected_(idx_); // Set to idx_ after 0.1 seconds
+    }, 100); // 100 milliseconds = 0.1 seconds
+    }
+
+    // Other logic you might have
   };
 
   return (
@@ -106,11 +118,12 @@ const OptionItem_ = ({ obj_, idx_ }: OptionItem_Props) => {
         className={`w-[350px] h-[200px] bg-black/30 rounded-[4px] m-1 relative overflow-hidden cursor-pointer`}
         onClick={() => {
           // @ts-ignore
-          setSelected_(idx_);
+          
+          handleClick(idx_)
+          setPlaying_(false)
           // @ts-ignore
           setSelect_(obj_);
           // handleNav_()
-          console.log(idx_);
         }}
       >
         <img

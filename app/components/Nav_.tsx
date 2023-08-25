@@ -1,5 +1,5 @@
 import { faFacebook, faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faPeopleGroup, faPhone, faThumbsUp } from "@fortawesome/free-solid-svg-icons";
+import { faPaperclip, faPeopleGroup, faPhone, faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface Nav_Props {}
@@ -23,8 +23,7 @@ const Nav_ = ({}: Nav_Props) => {
       <div
         className={`min-w-[150px] h-[50px] rounded-[4px] flex flex-row justify-center items-center`}
       >
-        {[
-          { text: "Book Call", icon: faPhone },
+        {[{ text: "Book Call", icon: faPhone },
           { text: "Refer a Friend", icon: faPeopleGroup },
           // { text: "Hire Me", icon: faThumbsUp },
           { text: "Connect", icon: faLinkedin },
