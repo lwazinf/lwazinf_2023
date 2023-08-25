@@ -34,9 +34,12 @@ const Focus_ = ({}) => {
     const playerObj = document.getElementById("main-player");
     if (playerObj) {
       const updateTime = () => {
+        // @ts-ignore
         const currentTime = playerObj.currentTime;
+        // @ts-ignore
         const duration = playerObj.duration;
 
+        // @ts-ignore
         const formatTime = (time) => {
           const minutes = Math.floor(time / 60);
           const seconds = Math.floor(time % 60);
