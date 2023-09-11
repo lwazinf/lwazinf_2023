@@ -10,7 +10,7 @@ interface Social_Props {}
 const Social_ = ({}: Social_Props) => {
   return (
     <div
-      className={`w-[50px] min-h-[120px] fixed left-0 top-[80px] flex flex-col cursor-pointer`}
+      className={`w-[50px] min-h-[120px] fixed left-0 top-[130px] flex flex-col cursor-pointer`}
     >
       <a href="#home">
         <div
@@ -24,7 +24,7 @@ const Social_ = ({}: Social_Props) => {
         </div>
       </a>
 
-      <div className={``}>
+      <div className={`mt-4`}>
         <a
           target="_blank"
           rel="noopener noreferrer"

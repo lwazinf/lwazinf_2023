@@ -108,8 +108,10 @@ const Focus_ = ({}) => {
 
   return (
     <div
-      className={`w-full min-h-[400px] flex flex-col justify-start items-center px-4 mt-8`}
+      className={`w-full min-h-[400px] flex flex-col justify-start items-center px-4 mt-8 relative`}
+      
     >
+      <div className={`absolute top-[-25px]`} id={`focus0`}></div>
       <div
         className={`w-full h-[450px] flex flex-row justify-start items-center`}
       >
@@ -117,7 +119,7 @@ const Focus_ = ({}) => {
           className={`w-[800px] h-full flex flex-row justify-center items-center rounded-[4px] bg-black/30 m-1 relative overflow-hidden ${loaded_ ? 'opacity-100 duration-500' : 'opacity-0 duration-0'} transition-all`}
         >
           <div className={`h-full object-cover`}>
-            <video autoPlay id={`main-player`}>
+            <video autoPlay={false} id={`main-player`}>
               <source
                 src={"https://vod-progressive.akamaized.net/exp=1693034935~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F3870%2F20%2F519352883%2F2419961370.mp4~hmac=c48c80f00a7d2be77aa04a689807690229fcd32d5db81abb3dfe8d93b7393f90/vimeo-prod-skyfire-std-us/01/3870/20/519352883/2419961370.mp4?download=1&filename=pexels-tima-miroshnichenko-7033786+%28360p%29.mp4"}
                 type="video/mp4"

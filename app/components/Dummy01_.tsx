@@ -37,7 +37,7 @@ const Dummy01_ = ({}: Dummy01_Props) => {
       <div
         className={`absolute bottom-0 left-0 flex flex-row justify-center items-center w-full h-[40px]`}
       >
-        <div
+        {/* <div
           className={`opacity-50 hover:opacity-100 transition-all duration-200 flex flex-row justify-start items-center cursor-pointer w-[80px]`}
           onClick={() => {
             setPosition_("ml-[-100px]");
@@ -62,9 +62,9 @@ const Dummy01_ = ({}: Dummy01_Props) => {
           >
             {fund_}
           </p>
-        </div>
+        </div> */}
 
-        <div
+        {/* <div
           className={`opacity-50 hover:opacity-100 transition-all duration-200 flex flex-row justify-start items-center cursor-pointer w-[80px]`}
           onClick={() => {
             setPosition_("ml-[-45px]");
@@ -89,9 +89,9 @@ const Dummy01_ = ({}: Dummy01_Props) => {
           >
             {spots_}
           </p>
-        </div>
+        </div> */}
 
-        <div
+        {/* <div
           className={`opacity-50 hover:opacity-100 transition-all duration-200 flex flex-row justify-start items-center cursor-pointer w-[80px]`}
           onClick={() => {
             setPosition_("ml-[5px]");
@@ -116,7 +116,7 @@ const Dummy01_ = ({}: Dummy01_Props) => {
           >
             {split_}
           </p>
-        </div>
+        </div> */}
       </div>
 
       <div
@@ -192,19 +192,21 @@ const Dummy01_ = ({}: Dummy01_Props) => {
           </label>
         </form>
 
-        <FontAwesomeIcon
+        <a href={`#focus0`}>
+          <FontAwesomeIcon
           icon={faVideo}
           className={`h-[18px] w-[18px] mt-[2.3px] m-2 cursor-pointer text-white/50 hover:text-white/80 transition-all duration-200 absolute bottom-0 right-8`}
           onClick={() => {
             console.log("Uploading video..");
           }}
         />
+        </a>
       </div>
       <div
         className={`h-[27px] w-[90px] rounded-[2px] m-2 cursor-pointer bg-white/100 hover:bg-white/80 transition-all duration-200 absolute bottom-0 right-0 flex flex-col justify-center items-center`}
         onClick={() => {}}
       >
-        <p className={`font-medium text-[13px]`}>Post</p>
+        <p className={`font-medium text-[13px]`}>Notify</p>
       </div>
       <div
         className={`w-[60px] h-[30px] rounded-[6px] shadow-md bg-[#202f3c]/90 transition-all duration-200 absolute bottom-6 left-[260px] ${position_} ${visibility_} border-solid border-[1px] border-white/10 cursor-pointer flex flex-col justify-center items-center`}
@@ -212,7 +214,7 @@ const Dummy01_ = ({}: Dummy01_Props) => {
         <input
           type={"text"}
           // @ts-ignore
-          maxlength={`${position_ != "ml-[5px]" ? "3" : "2"}`}
+          maxLength={`${position_ != "ml-[5px]" ? "3" : "2"}`}
           className={`w-full h-full bg-transparent text-center text-white/80 font-medium text-[13px]`}
           onChange={(e) => {
             position_ == "ml-[5px]"
@@ -276,12 +278,12 @@ export const Dummy02_ = ({}: Dummy02_Props) => {
 
       <div className={`flex flex-row w-[250px] mt-[0px]`}>
         <div
-          className={`font-thin text-black/50 text-[20px] w-[145px] h-[50px] bg-white/60 rounded-5 mx-[5px] flex flex-col justify-center items-center cursor-pointer transition-all duration-400 hover:bg-white`}
+          className={`font-thin text-black/50 text-[20px] w-[145px] h-[50px] bg-white/60 rounded-5 mx-[5px] flex flex-col justify-center items-center cursor-pointer transition-all duration-200 hover:bg-white`}
         >
           Transactions
         </div>
         <div
-          className={`font-thin text-black/50 text-[20px] w-[145px] h-[50px] bg-white/60 rounded-5 mx-[5px] flex flex-col justify-center items-center cursor-pointer transition-all duration-400 hover:bg-white`}
+          className={`font-thin text-black/50 text-[20px] w-[145px] h-[50px] bg-white/60 rounded-5 mx-[5px] flex flex-col justify-center items-center cursor-pointer transition-all duration-200 hover:bg-white`}
         >
           Scan
         </div>
@@ -292,7 +294,7 @@ export const Dummy02_ = ({}: Dummy02_Props) => {
       />
 
       <div
-        className={`bg-white/40 flex flex-row items-center justify-center w-[300px] h-[100px] relative p-[4px] rounded-[6px] cursor-pointer transition-all duration-[800ms] hover:bg-white`}
+        className={`bg-white/40 flex flex-row items-center justify-center w-[300px] h-[100px] relative p-[4px] rounded-[6px] cursor-pointer transition-all duration-400 hover:bg-white`}
       >
         <img
           src={
