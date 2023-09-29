@@ -20,6 +20,35 @@
 }
 
 @layer components {
+  @keyframes expandWidthAndFade {
+    0% {
+      width: 0%;
+      opacity: 1;
+    }
+    90% {
+      width: 100%;
+      opacity: 1;
+    }
+    100% {
+      width: 100%;
+      opacity: 0;
+    }
+  }
+  
+  /* Apply the animation to the red div */
+  .animate-expand-width-and-fade {
+    animation-name: expandWidthAndFade;
+  }
+  
+  @keyframes bounceHorizontal {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(3px); /* Adjust the distance as needed */
+    }
+  }
+
   input,
   textarea {
     border: none;

@@ -47,7 +47,7 @@ export default function StepUI_() {
               Back
             </div>
             <div
-              className={`min-w-2 min-h-2 p-3 py-1 flex flex-row justify-center items-center bg-blue-300 hover:bg-blue-500 hover:animate-pulse rounded-[20px] text-white text-[14px] transition-all duration-200 cursor-pointer`}
+              className={`min-w-2 min-h-2 p-3 py-1 flex flex-row justify-center items-center bg-black/80 hover:bg-black/70 rounded-[20px] text-white text-[14px] transition-all duration-200 cursor-pointer`}
               onClick={() => {
                 if(currentStep_ < [1, 2, 3, 4].length+1){
                   setCurrentStep_(currentStep_+1)
@@ -71,12 +71,12 @@ const Step_ = ({ step, currentStep }: Step_Props) => {
     <div
       className={`w-[35px] h-[35px] rounded-[50%] cursor-pointer ${
         currentStep >= step
-          ? "bg-blue-400 text-blue-400"
-          : "bg-slate-200 text-slate-400 hover:bg-blue-200 hover:text-blue-200"
-      } flex flex-col justify-center items-center transition-all duration-500 ${ currentStep > step ? "bg-blue-200 p-[3px]" : "p-[2px]"}`}
+          ? "bg-black/80 text-black/80"
+          : "bg-slate-200 text-slate-400 hover:bg-black/20 hover:text-black/20"
+      } flex flex-col justify-center items-center transition-all duration-500 ${ currentStep > step ? "bg-black/20 p-[3px]" : "p-[2px]"}`}
     >
       <div
-        className={`w-full h-full rounded-[50%] ${ currentStep > step ? "bg-blue-400 text-white" : "bg-white"} flex flex-col justify-center items-center cursor-pointer transition-all duration-75`}
+        className={`w-full h-full rounded-[50%] ${ currentStep > step ? "bg-black/80 text-white" : "bg-white"} flex flex-col justify-center items-center cursor-pointer transition-all duration-75`}
       >
         { currentStep > step ? <FontAwesomeIcon icon={faCheck} className={``}/> : step }
       </div>

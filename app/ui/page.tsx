@@ -3,6 +3,9 @@
 import { useState } from "react";
 import MailUI_ from "../components/ui/MailUI_";
 import StepUI_ from "../components/ui/StepUI_";
+import ChatUI_ from "../components/ui/ChatuI_";
+import LoadingUI_ from "../components/ui/LoadingUI_";
+import VideoUI_ from "../components/ui/VideoUI_";
 
 export default function Home() {
   return (
@@ -11,7 +14,10 @@ export default function Home() {
         className={`flex flex-row justify-center items-center min-w-[910px] min-h-screen`}
       >
         <StepUI_/>
-        <MailUI_/>
+        {/* <MailUI_/> */}
+        <LoadingUI_/>
+        {/* <ChatUI_/> */}
+        <VideoUI_/>
       </div>
     </main>
   );
