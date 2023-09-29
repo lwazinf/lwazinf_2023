@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useState } from "react";
 import { badges_ } from "../utils/utils";
 import Dummy01_ from "./Dummy01_";

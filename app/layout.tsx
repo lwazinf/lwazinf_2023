@@ -25,7 +25,6 @@ export default function RootLayout({
       <title>{metadata?.title}</title>
       <body className={inter.className}>
         <RecoilRoot>
-          <Hero_/>
           {children}
         </RecoilRoot>
       </body>
