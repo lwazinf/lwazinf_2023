@@ -195,19 +195,19 @@ export default function VideoUI_() {
               >
                 <FontAwesomeIcon
                   icon={faMessage}
-                  className={`text-slate-200 hover:text-white animate-bounce transition-all duration-200 cursor-pointer ml-[100px]`}
+                  className={`hover:mb-1 hover:animate-none text-slate-200 hover:text-white animate-bounce transition-all duration-200 cursor-pointer ml-[100px]`}
                 />
                 <FontAwesomeIcon
                   icon={faMessage}
-                  className={`text-slate-200 hover:text-white animate-bounce transition-all duration-200 cursor-pointer ml-[200px]`}
+                  className={`hover:mb-1 hover:animate-none text-slate-200 hover:text-white animate-bounce transition-all duration-200 cursor-pointer ml-[200px]`}
                 />
                 <FontAwesomeIcon
                   icon={faMessage}
-                  className={`text-slate-200 hover:text-white animate-bounce transition-all duration-200 cursor-pointer ml-[20px]`}
+                  className={`hover:mb-1 hover:animate-none text-slate-200 hover:text-white animate-bounce transition-all duration-200 cursor-pointer ml-[20px]`}
                 />
                 <FontAwesomeIcon
                   icon={faMessage}
-                  className={`text-slate-200 hover:text-white animate-bounce transition-all duration-200 cursor-pointer ml-[110px]`}
+                  className={`hover:mb-1 hover:animate-none text-slate-200 hover:text-white animate-bounce transition-all duration-200 cursor-pointer ml-[110px]`}
                 />
               </div>
               <div
@@ -240,7 +240,7 @@ export default function VideoUI_() {
                   icon={
                     currentTime === fullTime_
                       ? faRotateLeft
-                      : isVideoPlaying
+                     : isVideoPlaying
                       ? faPause
                       : faPlay
                   } // Dynamically set the icon based on video play state
@@ -302,7 +302,7 @@ export default function VideoUI_() {
                 className={`flex flex-row justify-center items-center min-w-0 min-h-0`}
               >
                 <div
-                  className={`text-slate-200 hover:text-white mr-4 transition-all duration-200 cursor-pointer text-[14px] font-medium`}
+                  className={`text-slate-200 hover:text-white mr-4 transition-all duration-200 cursor-pointer text-[12px] font-medium`}
                 >
                   720p
                 </div>
