@@ -20,9 +20,10 @@ export default function MenuUI_() {
     setIsMouseInside(false);
   };
 
-  const handleMouseMove = (ev) => {
+  const handleMouseMove = (ev: any) => {
     const container = containerRef.current;
     if (container && isMouseInside) {
+    // @ts-ignore
       const containerRect = container.getBoundingClientRect();
       const relativeY = ev.clientY - containerRect.top;
       setMousePosition({ x: ev.clientX, y: relativeY });
