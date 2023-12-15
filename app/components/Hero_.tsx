@@ -20,13 +20,11 @@ const Hero_ = ({}: Hero_Props) => {
 
   useEffect(() => {
     if (card_) {
-      console.log("first");
       setGivenText_({
         first: currentObj_.text,
         second: givenText_.second,
       });
     } else {
-      console.log("second");
       setGivenText_({
         first: givenText_.first,
         second: currentObj_.text,

@@ -154,7 +154,7 @@ export default function VideoUI_() {
       >
         <video controls={false} width="640" height="360" id="videoElement" ref={videoRef}>
           <source
-            src="https://vod-progressive.akamaized.net/exp=1696092062~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F237%2F17%2F426185082%2F1847081228.mp4~hmac=c0ab59da6a315d7ab4a86752177cff2efae172974ee85845d6a113f668a62159/vimeo-prod-skyfire-std-us/01/237/17/426185082/1847081228.mp4?download=1&filename=production_id%3A4568686+%28720p%29.mp4"
+            src={`https://vod-progressive.akamaized.net/exp=1702639744~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F2433%2F26%2F662169694%2F3044888239.mp4~hmac=609c836fbce6f3ba4c85cf3fb619d6095c305200dcb2dec53c5af4587aa28417/vimeo-prod-skyfire-std-us/01/2433/26/662169694/3044888239.mp4?download=1&filename=pexels-westarmoney-10739357+%28360p%29.mp4`}
             type="video/mp4"
           />
         </video>
