@@ -108,12 +108,12 @@ const Focus_ = ({}) => {
 
   return (
     <div
-      className={`w-full min-h-[400px] flex flex-col justify-start items-center px-4 mt-8 relative`}
+      className={`w-full min-h-[400px] flex flex-col justify-center items-center px-4 mt-8 relative`}
       
     >
       <div className={`absolute top-[-25px]`} id={`focus0`}></div>
       <div
-        className={`w-full h-[450px] flex flex-row justify-start items-center`}
+        className={`w-full h-[450px] flex flex-row justify-center items-center`}
       >
         <div
           className={`w-[800px] h-full flex flex-row justify-center items-center rounded-[4px] bg-black/30 m-1 relative overflow-hidden ${loaded_ ? 'opacity-100 duration-500' : 'opacity-0 duration-0'} transition-all`}

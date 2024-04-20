@@ -15,11 +15,11 @@ const Options_ = ({}: Options_Props) => {
   const [select, setSelect] = useRecoilState(SelectState);
   return (
     <div
-      className={`w-full min-h-[400px] flex flex-col justify-start items-center px-4 mt-8`}
+      className={`w-full min-h-[400px] flex flex-col justify-center items-center px-4 mt-8`}
       id={`focus1`}
     >
       <div
-        className={`w-full h-[50px] flex flex-row justify-between items-center rounded-[4px] m-1`}
+        className={`w-full h-[50px] flex flex-row justify-center items-center rounded-[4px] m-1`}
       >
         <div className={`min-w-[150px] h-[40px] rounded-[4px] m-1`}>
           <p className={`text-[18px] font-black text-black/50`}>
@@ -38,7 +38,7 @@ const Options_ = ({}: Options_Props) => {
         </div> */}
       </div>
       <div
-        className={`w-full min-h-0 flex flex-row justify-start items-center rounded-[4px] mb-8`}
+        className={`w-full min-h-0 flex flex-row justify-center items-center rounded-[4px] mb-8`}
       >
         {data_.map((obj, index) => (
           <OptionItem_ obj_={obj} idx_={`${index}`} key={index} />
